@@ -5,6 +5,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,13 @@
 			--background: #FBF2CF;
 			--hover: #A1C298;
 			--btn: #FA7070;
+
+			scroll-behavior: smooth;
+		}
+
+		a {
+			text-decoration: none;
+			color: inherit;
 		}
 
 		body {
@@ -95,12 +103,11 @@
 		.btn {
 			cursor: pointer;
 			width: 20%;
-			padding: 1rem 2rem;
+			padding: 1rem;
 			text-align: center;
 			margin: 0 auto;
 			border: none;
 			text-decoration: none;
-			/* color: white; */
 			background-color: var(--background);
 			border-radius: 0.5rem;
 			font-weight: 800;
@@ -108,10 +115,8 @@
 			text-transform: uppercase;
 
 			display: inline-block;
-			/* padding-bottom: 2px; */
 			background-image: linear-gradient(var(--btn) 0 0);
 			background-position: right bottom;
-			/* OR left bottom*/
 			background-size: 100% 2px;
 			background-repeat: no-repeat;
 			transition: background-size 0.5s;
@@ -123,13 +128,49 @@
 
 		.image-wrapper {
 			width: 50%;
-			border-radius: 0 0 0 1rem;
 			overflow: hidden;
 		}
 
 		.image-wrapper img {
+			background-size: cover;
 			width: 100%;
 			height: 100%;
+		}
+
+		.content {
+			margin-top: 2rem;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			text-transform: capitalize;
+		}
+
+		.products {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+			gap: 0px 0px;
+			grid-auto-flow: row;
+			grid-template-areas:
+				". . ."
+				". . ."
+				". . .";
+			place-items: center;
+		}
+
+		.item {
+			border: 1px solid black;
+			width: 50%;
+			margin: 1rem 0;
+		}
+
+		.products-photo {
+			width: 100%;
+			margin: 8rem 0;
+		}
+
+		.products-photo img {
+			width: 100%;
 		}
 	</style>
 </head>
@@ -140,8 +181,8 @@
 		<div class="info-menu">
 			<nav class="nav-menu">
 				<ul>
-					<li>Deva Curl.</li>
-					<li>Products</li>
+					<li><a href="">Deva Curl.</a></li>
+					<li><a href="#products">Products</a></li>
 					<li>About</li>
 					<li>FAQ</li>
 				</ul>
@@ -153,10 +194,58 @@
 				Start shopping
 			</button>
 		</div>
-		<div class="image-wrapper">
-			<img src="https://devacurl-blog.s3.amazonaws.com/wp-content/uploads/2021/06/15174702/blog-header-6-15.jpg" alt="Deva Curl Products">
+		<div class="image-wrapper swiper mySwiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="https://devacurl-blog.s3.amazonaws.com/wp-content/uploads/2021/06/15174702/blog-header-6-15.jpg" alt="Deva Curl Products">
+				</div>
+
+				<div class="swiper-slide">
+					<img src="https://res.cloudinary.com/devacurl/image/upload/f_auto,q_auto,w_2560,d_true,dpr_auto/DevaCurl/hp_hero_101822-Gift-Guide_2560x1440-nocopy" alt="products">
+				</div>
+				<div class="swiper-slide">
+					<img src="https://res.cloudinary.com/devacurl/image/upload/f_auto,q_auto,w_2560,d_true,dpr_auto/hp_hero_100322-holiday-jumbos-launch_2560x1440_vgiduy" alt="products">
+				</div>
+
+			</div>
+			<div class="swiper-pagination"></div>
 		</div>
 	</div>
+
+	<div class="products-photo">
+		<img src="https://res.cloudinary.com/devacurl/image/upload/f_auto,q_auto,w_2560,d_true,dpr_auto/hp_hero_100322-holiday-kits-launch_2560x1440_hgjxot" alt="products">
+	</div>
+
+	<div class="content">
+		<h1 id="products">What's in trend?</h1>
+
+
+		<div class="products">
+
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+			<div class="item">4</div>
+			<div class="item">5</div>
+			<div class="item">6</div>
+
+		</div>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+	<script>
+		var swiper = new Swiper(".mySwiper", {
+			pagination: {
+				el: ".swiper-pagination",
+			},
+			autoplay: {
+				delay: 2000,
+				disableOnInteraction: false,
+			},
+		});
+	</script>
 
 </body>
 
