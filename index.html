@@ -6,6 +6,11 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +26,8 @@
 			scroll-behavior: smooth;
 		}
 
-		a {
+		a,
+		a:hover {
 			text-decoration: none;
 			color: inherit;
 		}
@@ -64,6 +70,7 @@
 		.nav-menu ul li:first-child {
 			font-size: 40px;
 			color: var(--title);
+
 		}
 
 		.nav-menu ul li {
@@ -138,7 +145,7 @@
 		}
 
 		.content {
-			margin-top: 2rem;
+			margin: 2rem 0;
 			display: flex;
 			flex-direction: column;
 			text-align: center;
@@ -148,20 +155,59 @@
 		.products {
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
-			grid-template-rows: 1fr 1fr 1fr;
-			gap: 0px 0px;
+			grid-template-rows: 1fr 1fr;
 			grid-auto-flow: row;
 			grid-template-areas:
-				". . ."
 				". . ."
 				". . .";
 			place-items: center;
 		}
 
 		.item {
-			border: 1px solid black;
+			background-color: var(--hover);
+			margin: 1rem;
+			display: flex;
+		}
+
+		.item-image img {
+			width: 100%;
+			height: 100%;
+		}
+
+		.item-info {
+			margin: 0.5rem 1rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+		}
+
+		.item h3 {
+			font-weight: bold;
+		}
+
+		.item-info button {
+			cursor: pointer;
+			border: none;
+			background-color: var(--btn);
+			color: var(--text);
+			font-weight: 700;
+			padding: 1rem;
 			width: 50%;
-			margin: 1rem 0;
+			margin: 0 auto;
+		}
+
+		.item-info button:hover {
+			background-color: var(--title);
+		}
+
+		.glyphicon-star,
+		.glyphicon-star-empty {
+			color: yellow;
+		}
+
+		.item-price {
+			font-size: 2rem;
+			font-weight: 700;
 		}
 
 		.products-photo {
@@ -172,66 +218,184 @@
 		.products-photo img {
 			width: 100%;
 		}
+
+		footer div {
+			padding: 1rem 0;
+			background-color: var(--hover);
+			color: var(--text);
+			font-weight: 400;
+			font-size: 1.5rem;
+			text-align: center;
+		}
 	</style>
 </head>
 
 <body>
 
-	<div class="wrapper">
-		<div class="info-menu">
-			<nav class="nav-menu">
-				<ul>
-					<li><a href="">Deva Curl.</a></li>
-					<li><a href="#products">Products</a></li>
-					<li>About</li>
-					<li>FAQ</li>
-				</ul>
-			</nav>
+	<main>
 
-			<h1 class="home-title">OUR PRODUCT PHILOSOPHY &#x1F343; </h1>
-			<p class="home-description">We were free of harsh ingredients long before it was buzzworthy, and we did it because it was the right thing to do for curls. Our products are backed by science, dermatologist co-developed, inspired by our curl community, and always made with nourishing, hydrating ingredients designed to meet the unique needs of every curl type.</p>
-			<button type="button" class="btn">
-				Start shopping
-			</button>
-		</div>
-		<div class="image-wrapper swiper mySwiper">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<img src="https://devacurl-blog.s3.amazonaws.com/wp-content/uploads/2021/06/15174702/blog-header-6-15.jpg" alt="Deva Curl Products">
-				</div>
 
-				<div class="swiper-slide">
-					<img src="https://res.cloudinary.com/devacurl/image/upload/f_auto,q_auto,w_2560,d_true,dpr_auto/DevaCurl/hp_hero_101822-Gift-Guide_2560x1440-nocopy" alt="products">
-				</div>
-				<div class="swiper-slide">
-					<img src="https://res.cloudinary.com/devacurl/image/upload/f_auto,q_auto,w_2560,d_true,dpr_auto/hp_hero_100322-holiday-jumbos-launch_2560x1440_vgiduy" alt="products">
-				</div>
+		<div class="wrapper">
+			<div class="info-menu">
+				<nav class="nav-menu">
+					<ul>
+						<li><a href="">Deva Curl.</a></li>
+						<li><a href="#products">Products</a></li>
+						<li>About</li>
+						<li>FAQ</li>
+					</ul>
+				</nav>
 
+				<h1 class="home-title">OUR PRODUCT PHILOSOPHY &#x1F343; </h1>
+				<p class="home-description">We were free of harsh ingredients long before it was buzzworthy, and we did it because it was the right thing to do for curls. Our products are backed by science, dermatologist co-developed, inspired by our curl community, and always made with nourishing, hydrating ingredients designed to meet the unique needs of every curl type.</p>
+				<button type="button" class="btn">
+					Start shopping
+				</button>
 			</div>
-			<div class="swiper-pagination"></div>
-		</div>
-	</div>
+			<div class="image-wrapper swiper mySwiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="https://devacurl-blog.s3.amazonaws.com/wp-content/uploads/2021/06/15174702/blog-header-6-15.jpg" alt="Deva Curl Products">
+					</div>
 
-	<div class="products-photo">
-		<img src="https://res.cloudinary.com/devacurl/image/upload/f_auto,q_auto,w_2560,d_true,dpr_auto/hp_hero_100322-holiday-kits-launch_2560x1440_hgjxot" alt="products">
-	</div>
+					<div class="swiper-slide">
+						<img src="https://res.cloudinary.com/devacurl/image/upload/f_auto,q_auto,w_2560,d_true,dpr_auto/DevaCurl/hp_hero_101822-Gift-Guide_2560x1440-nocopy" alt="products">
+					</div>
+					<div class="swiper-slide">
+						<img src="https://res.cloudinary.com/devacurl/image/upload/f_auto,q_auto,w_2560,d_true,dpr_auto/hp_hero_100322-holiday-jumbos-launch_2560x1440_vgiduy" alt="products">
+					</div>
 
-	<div class="content">
-		<h1 id="products">What's in trend?</h1>
-
-
-		<div class="products">
-
-			<div class="item">1</div>
-			<div class="item">2</div>
-			<div class="item">3</div>
-			<div class="item">4</div>
-			<div class="item">5</div>
-			<div class="item">6</div>
-
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
 		</div>
 
-	</div>
+		<div class="products-photo">
+			<img src="https://res.cloudinary.com/devacurl/image/upload/f_auto,q_auto,w_2560,d_true,dpr_auto/hp_hero_100322-holiday-kits-launch_2560x1440_hgjxot" alt="products">
+		</div>
+
+		<div class="content">
+			<h1 id="products">What's in trend?</h1>
+
+
+			<div class="products">
+
+				<div class="item">
+					<div class="item-image">
+						<img src="https://res.cloudinary.com/devacurl/image/upload/f_auto,q_auto,h_600,c_scale,d_true,dpr_auto/DevaCurl/pdp_holiday_supercream_2000x2000-2" alt="cream">
+					</div>
+					<div class="item-info">
+						<h3>LIMITED EDITION SUPERCREAM</h3>
+						<p>Rich Coconut-Infused Definer</p>
+						<div>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+						</div>
+						<span class="item-price">$ 17</span>
+						<button>Add to bag</button>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item-image">
+						<img src="https://res.cloudinary.com/devacurl/image/upload/f_auto,q_auto,h_600,c_scale,d_true,dpr_auto/DevaCurl/pdp_holiday_supercream_2000x2000-2" alt="cream">
+					</div>
+					<div class="item-info">
+						<h3>LIMITED EDITION SUPERCREAM</h3>
+						<p>Rich Coconut-Infused Definer</p>
+						<div>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+						</div>
+						<span class="item-price">$ 17</span>
+						<button>Add to bag</button>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item-image">
+						<img src="https://res.cloudinary.com/devacurl/image/upload/f_auto,q_auto,h_600,c_scale,d_true,dpr_auto/DevaCurl/pdp_holiday_supercream_2000x2000-2" alt="cream">
+					</div>
+					<div class="item-info">
+						<h3>LIMITED EDITION SUPERCREAM</h3>
+						<p>Rich Coconut-Infused Definer</p>
+						<div>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+						</div>
+						<span class="item-price">$ 17</span>
+						<button>Add to bag</button>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item-image">
+						<img src="https://res.cloudinary.com/devacurl/image/upload/f_auto,q_auto,h_600,c_scale,d_true,dpr_auto/DevaCurl/pdp_holiday_supercream_2000x2000-2" alt="cream">
+					</div>
+					<div class="item-info">
+						<h3>LIMITED EDITION SUPERCREAM</h3>
+						<p>Rich Coconut-Infused Definer</p>
+						<div>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+						</div>
+						<span class="item-price">$ 17</span>
+						<button>Add to bag</button>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item-image">
+						<img src="https://res.cloudinary.com/devacurl/image/upload/f_auto,q_auto,h_600,c_scale,d_true,dpr_auto/DevaCurl/pdp_holiday_supercream_2000x2000-2" alt="cream">
+					</div>
+					<div class="item-info">
+						<h3>LIMITED EDITION SUPERCREAM</h3>
+						<p>Rich Coconut-Infused Definer</p>
+						<div>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+						</div>
+						<span class="item-price">$ 17</span>
+						<button>Add to bag</button>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item-image">
+						<img src="https://res.cloudinary.com/devacurl/image/upload/f_auto,q_auto,h_600,c_scale,d_true,dpr_auto/DevaCurl/pdp_holiday_supercream_2000x2000-2" alt="cream">
+					</div>
+					<div class="item-info">
+						<h3>LIMITED EDITION SUPERCREAM</h3>
+						<p>Rich Coconut-Infused Definer</p>
+						<div>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+						</div>
+						<span class="item-price">$ 17</span>
+						<button>Add to bag</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<footer>
+			<div>Made with &#128150; by Vyctoria Karina </div>
+		</footer>
+	</main>
 
 	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
@@ -246,6 +410,9 @@
 			},
 		});
 	</script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </body>
 
